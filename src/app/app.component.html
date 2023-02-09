@@ -1,0 +1,26 @@
+<h1>Flopnames</h1>
+<h2>{{ winner }}</h2>
+<div style="margin-bottom:30px; margin-top:30px">
+  <button (click)="btnClicked('Red')">Red</button>
+  <button (click)="btnClicked('Blue')">Blue</button>
+  <br />
+  Current Team: <span class="{{ textColor }}">{{ color }}</span>
+</div>
+
+<fn-game-grid [Team]="color" (Winner)="onWin($event)"></fn-game-grid>
+
+<button (click)="toggleKey()" style="margin-top:10px">Toggle Key</button>
+
+<div class="keygrid" [style]="keyDisplay">
+  <div class="blue">o</div>
+  <div class="neutral"></div>
+  <div class="red">o</div>
+
+  <div class="assassin">x</div>
+  <div class="blue">o</div>
+  <div class="neutral"></div>
+
+  <div class="neutral"></div>
+  <div class="neutral"></div>
+  <div class="red">o</div>
+</div>
